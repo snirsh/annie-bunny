@@ -17,13 +17,13 @@ Thanks to Meta developers article [here](https://developers.facebook.com/blog/po
 3. Create a new search engine with the following attributes:
    - Search Engine: `Annie Bunny`<br/>
    - Shortcut: `ab`<br/>
-   - URL with %s in place of query: `https://fast-harbor-72501.herokuapp.com/search?cmd=%s`
+   - URL with %s in place of query: `https://fast-harbor-72501.herokuapp.com/search?q=%s`
 ### Firefox
 1. Install the “Add custom search engine” Firefox Add-on
 2. Open up the extension
 3. Fill out the form with the following values:
    - Name: `Annie Bunny`
-   - Search URL: `https://fast-harbor-72501.herokuapp.com/search?cmd=%s`
+   - Search URL: `https://fast-harbor-72501.herokuapp.com/search?q=%s`
 4. Click “Add custom search engine”
 5. Check the box “Make this the current search engine”
 6. Click “Add”
