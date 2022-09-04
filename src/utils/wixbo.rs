@@ -4,7 +4,7 @@ const FRAGMENT: &AsciiSet = &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').ad
 
 
 pub fn construct_wix_bo_search_url(query: &str) -> String {
-    let encoded_query = utf8_percent_encode(query, FRAGMENT).to_string();
+    let encoded_query = utf8_percent_encode(&query[..3], FRAGMENT).to_string();
     let wix_bo_search_url = format!(
         "https://bo.wix.com/?q={}", encoded_query);
     wix_bo_search_url
