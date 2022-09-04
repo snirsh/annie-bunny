@@ -7,9 +7,13 @@ pub fn construct_github_url(query: &str) ->  String {
     if query == "gh" {
         let github_full_url = "https://github.com";
         github_full_url.to_string()
-    } else {
+    } else if &query[..4] == "gh @" {
         let encoded_query = utf8_percent_encode(&query[3..], FRAGMENT).to_string();
         let github_full_url = format!("https://github.com/{}", encoded_query);
+        github_full_url
+    } else {
+        let encoded_query = utf8_percent_encode(&query[3..], FRAGMENT).to_string();
+        let github_full_url = format!("https://github.com/search?q={}&ref=opensearch", encoded_query);
         github_full_url
     }
 }
