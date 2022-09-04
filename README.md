@@ -8,6 +8,7 @@ Thanks to Meta developers article [here](https://developers.facebook.com/blog/po
 - `ghx <OPTIONAL_QUERY>` -> searches the entire [Wix repo's](https://github.com/search?q=org%3Awix+org%3Awix-p+org%3Awix-private+org%3Awix-playground+org%3Awix-platform+org%3Awix-system+org%3Awix-incubator) (other than "Archive") for the query.
 - `wbo <OPTIONAL_QUERY>` -> searches [Wix Back-office (bo.wix)](https://bo.wix.com) with the given query
 - `wl <OPTIONAL_QUERY>` / `wl @<USER_PROFILE_ID>` -> searches [wix-life](https://wix-life.com) with the given query, given `@` will go for the given users' profile
+- `cal <OPTIONAL_QUERY>` / `cal ev` -> will resolve to either Google Calendar or search `<OPTIONAL_QUERY>` within it. Using `ev` will result in a new calendar event.
 - Any other query that will not contain any of the above commands will resolve to a regular google search.
 
 ## Installation
