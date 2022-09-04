@@ -1,5 +1,4 @@
 pub mod google;
-pub mod twitter;
 pub mod github;
 pub mod wixbo;
 pub mod wixlife;
