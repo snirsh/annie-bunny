@@ -18,7 +18,6 @@ Thanks to Meta developers article [here](https://developers.facebook.com/blog/po
    - Search Engine: `Annie Bunny`<br/>
    - Shortcut: `ab`<br/>
    - URL with %s in place of query: `https://fast-harbor-72501.herokuapp.com/search?cmd=%s`
-4. And then select it as your main search engine!<br/> 
 ### Firefox
 1. Install the “Add custom search engine” Firefox Add-on
 2. Open up the extension
