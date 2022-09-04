@@ -8,7 +8,7 @@ pub fn construct_github_url(query: &str) ->  String {
         let github_full_url = "https://github.com";
         github_full_url.to_string()
     } else if &query[..4] == "gh @" {
-        let encoded_query = utf8_percent_encode(&query[3..], FRAGMENT).to_string();
+        let encoded_query = utf8_percent_encode(&query[4..], FRAGMENT).to_string();
         let github_full_url = format!("https://github.com/{}", encoded_query);
         github_full_url
     } else {
@@ -45,7 +45,7 @@ mod tests {
 
     #[test]
     fn test_construct_github_search_url_with_repo_url() {
-        let fake_query = "gh wix-private/thunderbolt";
+        let fake_query = "gh @wix-private/thunderbolt";
         assert_eq!(
             construct_github_url(fake_query),
             "https://github.com/wix-private/thunderbolt"
