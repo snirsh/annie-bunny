@@ -4,7 +4,7 @@ Built fully with [Rust](https://github.com/rust-lang/rust).
 <br/>
 Thanks to Meta developers article [here](https://developers.facebook.com/blog/post/2020/06/03/build-smart-bookmarking-tool-rust-rocket/) that is a Rust+Rocket Smart bookmarking tool based on the open sourced [bunny1](https://github.com/ccheever/bunny1).
 ## Commands
-- `gh <OPTIONAL_QUERY>` -> will resolve to either `https://github.com` or `https://github.com/<OPTIONAL_QUERY>`
+- `gh <OPTIONAL_QUERY>` / -> will resolve to either `https://github.com` or search GitHub for `<OPTIONAL_QUERY>`, adding `@` will resolve to `https://github.com/<OPTIONAL_QUERY>`
 - `ghx <OPTIONAL_QUERY>` -> searches the entire [Wix repo's](https://github.com/search?q=org%3Awix+org%3Awix-p+org%3Awix-private+org%3Awix-playground+org%3Awix-platform+org%3Awix-system+org%3Awix-incubator) (other than "Archive") for the query.
 - `wbo <OPTIONAL_QUERY>` -> searches [Wix Back-office (bo.wix)](https://bo.wix.com) with the given query
 - `wl <OPTIONAL_QUERY>` / `wl @<USER_PROFILE_ID>` -> searches [wix-life](https://wix-life.com) with the given query, given `@` will go for the given users' profile
