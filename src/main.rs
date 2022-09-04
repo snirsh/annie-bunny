@@ -5,15 +5,15 @@
 use rocket::response::Redirect;
 mod utils;
 
-#[get("/search?<q>")]
-fn search(q: String) -> Redirect {
-    let command = utils::get_command_from_query_string(&q);
+#[get("/search?<query>")]
+fn search(query: String) -> Redirect {
+    let command = utils::get_command_from_query_string(&query);
     let redirect_url = match command {
-        "gh" => utils::github::construct_github_url(&q),
-        "ghx" => utils::github::construct_wix_github_url(&q),
-        "wbo" => utils::wixbo::construct_wix_bo_search_url(&q),
-        "wl" => utils::wixlife::construct_wix_life_search_url(&q),
-        _ => utils::google::construct_google_search_url(&q)
+        "gh" => utils::github::construct_github_url(&query),
+        "ghx" => utils::github::construct_wix_github_url(&query),
+        "wbo" => utils::wixbo::construct_wix_bo_search_url(&query),
+        "wl" => utils::wixlife::construct_wix_life_search_url(&query),
+        _ => utils::google::construct_google_search_url(&query)
     };
     Redirect::to(redirect_url)
 }
