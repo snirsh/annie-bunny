@@ -7,7 +7,7 @@ pub fn construct_calendar_search_url(query: &str) -> String {
     if query == "cal" {
         let calendar_url = "https://calendar.google.com/calendar/u/0/r";
         calendar_url.to_string()
-    } else if query[4..] == "ev" {
+    } else if &query[4..] == "ev" {
         let calendar_ev_url = "http://www.google.com/calendar/event?action=TEMPLATE";
         calendar_ev_url.to_string()
     } else {
