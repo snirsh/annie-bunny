@@ -40,6 +40,7 @@ fn search(q: String) -> Redirect {
         "ghx" => utils::github::construct_wix_github_url(&q),
         "wbo" => utils::wixbo::construct_wix_bo_search_url(&q),
         "wl" => utils::wixlife::construct_wix_life_search_url(&q),
+        "cal" => utils::calendar::construct_calendar_search_url(&q),
         _ => utils::google::construct_google_search_url(&q)
     };
     Redirect::to(redirect_url)
