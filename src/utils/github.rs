@@ -1,7 +1,5 @@
 extern crate percent_encoding;
-
 use percent_encoding::{utf8_percent_encode, AsciiSet, CONTROLS};
-
 const FRAGMENT: &AsciiSet = &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');
 
 
@@ -17,7 +15,7 @@ pub fn construct_github_url(query: &str) ->  String {
 }
 
 pub fn construct_wix_github_url(query: &str) -> String {
-    if query == "ghw" {
+    if query == "ghx" {
         let github_wix_url = "https://github.com/search?q=org%3Awix+org%3Awix-p+org%3Awix-private+org%3Awix-playground+org%3Awix-platform+org%3Awix-system+org%3Awix-incubator";
         github_wix_url.to_string()
     } else {
