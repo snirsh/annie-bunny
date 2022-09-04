@@ -16,7 +16,7 @@ mod tests{
 
     #[test]
     fn test_construct_wl_search_url(){
-        let fake_query = "hello";
+        let fake_query = "wl hello";
         assert_eq!(
             construct_wix_life_search_url(fake_query),
             "https://www.wix-life.com/search?q=hello"
@@ -25,7 +25,7 @@ mod tests{
 
     #[test]
     fn test_construct_wl_search_url_with_encoding() {
-        let fake_query = "hello world";
+        let fake_query = "wl hello world";
         assert_eq!(
             construct_wix_life_search_url(fake_query),
             "https://www.wix-life.com/search?q=hello%20world"

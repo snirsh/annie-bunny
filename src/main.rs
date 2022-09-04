@@ -38,6 +38,7 @@ fn search(cmd: String) -> Redirect {
     let redirect_url = match command {
         "tw" => utils::twitter::construct_twitter_url(&cmd),
         "gh" => utils::github::construct_github_url(&cmd),
+        "ghx" => utils::github::construct_wix_github_url(&cmd),
         "wbo" => utils::wixbo::construct_wix_bo_search_url(&cmd),
         "wl" => utils::wixlife::construct_wix_life_search_url(&cmd),
         _ => utils::google::construct_google_search_url(&cmd)

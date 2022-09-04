@@ -16,6 +16,17 @@ pub fn construct_github_url(query: &str) ->  String {
     }
 }
 
+pub fn construct_wix_github_url(query: &str) -> String {
+    if query == "ghw" {
+        let github_wix_url = "https://github.com/search?q=org%3Awix+org%3Awix-p+org%3Awix-private+org%3Awix-playground+org%3Awix-platform+org%3Awix-system+org%3Awix-incubator";
+        github_wix_url.to_string()
+    } else {
+        let encoded_query = utf8_percent_encode(&query[4..], FRAGMENT).to_string();
+        let w_github_full_url = format!("https://github.com/search?q={}+org%3Awix+org%3Awix-p+org%3Awix-private+org%3Awix-playground+org%3Awix-platform+org%3Awix-system+org%3Awix-incubator", encoded_query);
+        w_github_full_url
+    }
+}
+
 
 #[cfg(test)]
 mod tests {
@@ -36,6 +47,15 @@ mod tests {
         assert_eq!(
             construct_github_url(fake_query),
             "https://github.com/wix-private/thunderbolt"
+        );
+    }
+
+    #[test]
+    fn test_construct_wix_github_profile_url_with_gh() {
+        let fake_query = "ghx thunderbolt";
+        assert_eq!(
+            construct_wix_github_url(fake_query),
+            "https://github.com/search?q=thunderbolt+org%3Awix+org%3Awix-p+org%3Awix-private+org%3Awix-playground+org%3Awix-platform+org%3Awix-system+org%3Awix-incubator"
         );
     }
 }
