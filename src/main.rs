@@ -5,7 +5,7 @@
 use rocket::response::Redirect;
 mod utils;
 
-#[get("/search?<cmd>")]
+#[get("/search?<q>")]
 fn search(cmd: String) -> Redirect {
     let command = utils::get_command_from_query_string(&cmd);
     let redirect_url = match command {
