@@ -7,6 +7,11 @@ pub fn construct_jira_search_url(query: &str) -> String {
     if query == "jr" {
         let jira_url = "https://jira.wixpress.com/";
         jira_url.to_string()
+    } else if &query[..4] == "jr @" {
+        let encoded_query = utf8_percent_encode(&query[4..], FRAGMENT).to_string();
+        let wix_life_search_url = format!(
+            "https://jira.wixpress.com/browse/{}", encoded_query);
+        wix_life_search_url
     } else {
         let encoded_query = utf8_percent_encode(&query[3..], FRAGMENT).to_string();
         let wix_life_search_url = format!(
