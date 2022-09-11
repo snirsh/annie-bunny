@@ -41,4 +41,13 @@ mod tests{
             "https://jira.wixpress.com/secure/QuickSearch.jspa?searchString=hello%20world"
         );
     }
+
+    #[test]
+    fn test_construct_jira_search_url_with_at() {
+        let fake_query = "jr @1";
+        assert_eq!(
+            construct_jira_search_url(fake_query),
+            "https://jira.wixpress.com/browse/1"
+        );
+    }
 }
