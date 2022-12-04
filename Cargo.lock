@@ -57,6 +57,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "annie-bunny"
+version = "1.0.0"
+dependencies = [
+ "percent-encoding 2.1.0",
+ "rocket",
+]
+
+[[package]]
 name = "atty"
 version = "0.2.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -762,11 +770,3 @@ name = "yansi"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "09041cd90cf85f7f8b2df60c646f853b7f535ce68f85244eb6731cf89fa498ec"
-
-[[package]]
-name = "yort"
-version = "0.1.0"
-dependencies = [
- "percent-encoding 2.1.0",
- "rocket",
-]
