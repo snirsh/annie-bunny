@@ -21,7 +21,7 @@ fn search(q: String) -> Redirect {
         "wl" => utils::wixlife::construct_wix_life_search_url(&q),
         "cal" => utils::calendar::construct_calendar_search_url(&q),
         "jr" => utils::jira::construct_jira_search_url(&q),
-        "yt" => utils::youtube::construct_youtube_search_url(&q),
+        "yt" => utils::youtube::construct_youtube_url(&q),
         _ => utils::google::construct_google_search_url(&q)
     };
     Redirect::to(redirect_url)
