@@ -1,6 +1,6 @@
-FROM rust:latest
+FROM rust:1.54 as build
 
-RUN USER=root rustup override set nightly
+RUN USER=root rustup default nightly
 RUN USER=root cargo new --bin annie-bunny
 WORKDIR /annie-bunny
 
@@ -8,12 +8,12 @@ COPY ./Cargo.lock ./Cargo.lock
 COPY ./Cargo.toml ./Cargo.toml
 
 RUN cargo build --release
-RUN rm src/*.rs
-
 COPY ./src ./src
 
-RUN rm ./target/release/deps/annie-bunny*
+FROM debian:buster-slim
 
-RUN cargo install --path
+COPY --from=build /annie-bunny/target/release/annie-bunny /usr/src/annie-bunny
+
 EXPOSE 8000
-CMD ["annie-bunny"]
+
+CMD ["/usr/src/annie-bunny"]
