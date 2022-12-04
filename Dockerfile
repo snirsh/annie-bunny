@@ -15,5 +15,5 @@ COPY ./src ./src
 RUN rm ./target/release/deps/annie-bunny*
 
 RUN cargo install --path
-
+EXPOSE 8000
 CMD ["annie-bunny"]
