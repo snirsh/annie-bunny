@@ -7,13 +7,13 @@ WORKDIR /annie-bunny
 COPY ./Cargo.lock ./Cargo.lock
 COPY ./Cargo.toml ./Cargo.toml
 
-RUN cargo build --release
+RUN cargo b -r
 RUN rm src/*.rs
 
 COPY ./src ./src
 
-RUN rm ./target/release/deps/annie-bunny*
-RUN cargo build --release
+RUN rm ./target/release/deps/annie_bunny*
+RUN cargo b -r
 
 FROM debian:buster-slim
 
