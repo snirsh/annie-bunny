@@ -1,2 +1,6 @@
-/target/*
-!/target/release
+.idea
+debug/
+target/
+Cargo.lock
+**/*.rs.bk
+*.pdb
