@@ -4,6 +4,7 @@ pub mod wixbo;
 pub mod wixlife;
 pub mod calendar;
 pub mod jira;
+pub mod youtube;
 
 pub fn get_command_from_query_string(query_string: &str) -> &str {
     if query_string.contains(' ') {
