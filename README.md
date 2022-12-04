@@ -10,9 +10,12 @@ Thanks to Meta developers article [here](https://developers.facebook.com/blog/po
 - `wl <OPTIONAL_QUERY>` / `wl @<USER_PROFILE_ID>` -> searches [wix-life](https://wix-life.com) with the given query, given `@` will go for the given users' profile
 - `jr <OPTIONAL_QUERY>` / `jr @<ISSUE-ID>` -> searches [jira](https://jira.wixpress.com/) for the given query or goes straight to issue, i.e issue PLAT-1994 will be accessed with the following command: `jr @plat-1994` (not case-sensitive).
 - `cal <OPTIONAL_QUERY>` / `cal ev` -> will resolve to either Google Calendar or search `<OPTIONAL_QUERY>` within it. Using `ev` will result in a new calendar event.
+- `yt <OPTIONAL_QUERY>` / -> will resolve to either `https://youtube.com` or search YouTube for `<OPTIONAL_QUERY>`, adding `@` will resolve to a youtube channel `https://youtube.com/@<OPTIONAL_QUERY>`
 - Any other query that will not contain any of the above commands will resolve to a regular google search.
 
 ## Installation
+### Locally with Docker
+Just run `docker build . -t "annie-bunny"` and then `docker run -d -p 8000:8000 annie-bunny` to run it in the background.
 ### Chrome
 1. Go to [Chrome's search engine settings](chrome://settings/searchEngines)
 2. Click the [Add]() button under `Site search`
