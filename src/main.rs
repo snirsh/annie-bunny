@@ -22,6 +22,7 @@ fn search(q: String) -> Redirect {
         "cal" => utils::calendar::construct_calendar_search_url(&q),
         "jr" => utils::jira::construct_jira_search_url(&q),
         "yt" => utils::youtube::construct_youtube_url(&q),
+        "pr" => utils::github::construct_github_prs(),
         _ => utils::google::construct_google_search_url(&q)
     };
     Redirect::to(redirect_url)

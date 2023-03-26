@@ -29,6 +29,10 @@ pub fn construct_wix_github_url(query: &str) -> String {
     }
 }
 
+pub fn construct_github_prs() -> String {
+    let gh_prs_url = "https://github.com/pulls?q=is%3Apr+is%3Aopen+author%3A%40me+archived%3Afalse+sort%3Aupdated-desc"
+    gh_prs_url
+}
 
 #[cfg(test)]
 mod tests {
